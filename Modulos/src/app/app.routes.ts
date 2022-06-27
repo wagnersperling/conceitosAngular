@@ -1,5 +1,6 @@
+import { NgModule } from '@angular/core';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './navegacao/home/home.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 
@@ -9,3 +10,13 @@ export const rootRouterConfig: Routes = [
     { path: 'sobre', component: SobreComponent },
     { path: 'cadastro', component: CadastroComponent }
 ];
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot(rootRouterConfig)
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+export class AppRoutingModule{}

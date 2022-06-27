@@ -1,7 +1,7 @@
+import { AppRoutingModule } from './app.routes';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
@@ -11,7 +11,6 @@ import { CustomFormsModule } from 'ng2-validation'
 
 import { AppComponent } from './app.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
-import { rootRouterConfig } from './app.routes';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 
 @NgModule({
@@ -28,7 +27,7 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
     NgBrazil,
     CustomFormsModule,
     TextMask.TextMaskModule,
-    [RouterModule.forRoot(rootRouterConfig, { useHash: false})]
+    AppRoutingModule
   ],
   providers: [
     {provide: APP_BASE_HREF, useValue: '/'}
