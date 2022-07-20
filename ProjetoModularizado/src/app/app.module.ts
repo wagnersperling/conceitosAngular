@@ -14,6 +14,7 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { AppRoutingModule } from './app.routes';
+import { AuthGuard } from './services/app.guard';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import { AppRoutingModule } from './app.routes';
     TextMask.TextMaskModule,
     NgBrazil,
     CustomFormsModule,
-    AppRoutingModule
+    AppRoutingModule    
   ],
   providers: [
     // {provide: APP_BASE_HREF, useValue: '/'}
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

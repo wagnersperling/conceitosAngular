@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/app.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './navegacao/home/home.component';
@@ -13,6 +14,10 @@ const rootRouterConfig: Routes = [
     { path: 'produtos', 
             loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
             .then(m => m.ProdutoModule)},
+    { path: 'admin', 
+            loadChildren: () => import('./admin/admin.module')
+            .then(m => m.AdminModule),
+            canLoad: [AuthGuard], canActivate: [AuthGuard]},
             
     {path: '**', component: NotFoundComponent}
 ];
