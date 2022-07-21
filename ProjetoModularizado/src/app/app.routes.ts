@@ -1,3 +1,4 @@
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { AuthGuard } from './services/app.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,6 +16,7 @@ const rootRouterConfig: Routes = [
     { path: 'produtos', 
             loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
             .then(m => m.ProdutoModule)},
+    { path: 'filmes', component: FilmesComponent },
     { path: 'admin', 
             loadChildren: () => import('./admin/admin.module')
             .then(m => m.AdminModule),
