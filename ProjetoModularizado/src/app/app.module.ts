@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -23,6 +23,14 @@ import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
+import { BarComponent } from './demos/bar-di-zones/bar/bar.component';
+import { BarModule } from './demos/bar-di-zones/bar/bar.module';
+import { BarService } from './demos/bar-di-zones/bar/bar.service';
+import { HttpClientModule } from '@angular/common/http';
+
+export const BAR_PROVIDERS: Provider[] = [ 
+  BarService
+];
 
 @NgModule({
   declarations: [
@@ -31,7 +39,7 @@ import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
     CadastroComponent,
     FilmesComponent,
     FileSizePipe,
-    ImageFormaterPipe
+    ImageFormaterPipe    
   ],
   imports: [
     BrowserModule,
@@ -41,12 +49,15 @@ import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
     TextMask.TextMaskModule,
     NgBrazil,
     CustomFormsModule,
-    AppRoutingModule    
+    AppRoutingModule,
+    BarModule,
+    HttpClientModule
   ],
   providers: [
     // {provide: APP_BASE_HREF, useValue: '/'}
     AuthGuard,
-    CadastroGuard
+    CadastroGuard,
+    //BAR_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
