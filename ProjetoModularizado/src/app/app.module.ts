@@ -1,3 +1,4 @@
+import { TodoModule } from './demos/todo-list/todo.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Provider } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -39,7 +40,7 @@ export const BAR_PROVIDERS: Provider[] = [
     CadastroComponent,
     FilmesComponent,
     FileSizePipe,
-    ImageFormaterPipe    
+    ImageFormaterPipe
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,8 @@ export const BAR_PROVIDERS: Provider[] = [
       unidadeId: 1000,
       unidadeToken: 'odfjdgklri999988fdslf'
     }),
-    HttpClientModule
+    HttpClientModule,
+    TodoModule
   ],
   providers: [
     // {provide: APP_BASE_HREF, useValue: '/'}

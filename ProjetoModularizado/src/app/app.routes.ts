@@ -1,3 +1,4 @@
+import { TodoComponent } from './demos/todo-list/todo.component';
 import { BarComponent } from './demos/bar-di-zones/bar/bar.component';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { AuthGuard } from './services/app.guard';
@@ -23,6 +24,7 @@ const rootRouterConfig: Routes = [
             .then(m => m.AdminModule),
             canLoad: [AuthGuard], canActivate: [AuthGuard]},
     { path: 'bar', component: BarComponent },
+    { path: 'todo', component: TodoComponent },
             
     {path: '**', component: NotFoundComponent}
 ];
